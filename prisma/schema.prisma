@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model WatchlistItem {
+  id         String    @id @default(cuid())
+  tmdbId     Int       @unique
+  title      String
+  posterPath String?
+  backdropPath String?
+  mediaType  String    @default("movie")
+  overview   String?
+  genres     String    @default("[]") // JSON array of genre names
+  voteAverage Float?
+  releaseDate String?
+  watched    Boolean   @default(false)
+  rating     Int?      // 1–5 personal star rating
+  addedAt    DateTime  @default(now())
+  watchedAt  DateTime?
+
+  @@index([watched])
+  @@index([mediaType])
+}
