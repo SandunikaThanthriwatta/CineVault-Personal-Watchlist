@@ -1,5 +1,7 @@
 # 🎬 CineVault — Personal Watchlist
 
+**Live app:** [cine-vault-personal-watchlist.vercel.app](https://cine-vault-personal-watchlist.vercel.app)
+
 A full-stack web app to discover, track, and rate movies and TV shows using the TMDB API.
 
 ## Features
